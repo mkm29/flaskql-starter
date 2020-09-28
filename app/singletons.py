@@ -9,13 +9,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 def config():
     return "sqlite:///projects.db"
-    # If using Postgres, set local ENV vars in .envrc file
-    port = os.environ.get("POSTGRESQL_SERVICE_PORT")
-    host = os.environ.get("POSTGRESQL_SERVICE_HOST")
-    user = os.environ.get("POSTGRESQL_USER")
-    database = os.environ.get("POSTGRES_DB")
-    password = os.environ.get("POSTGRES_PASSWORD")
-    return f"postgresql://{user}:{password}@{host}:{port}/{database}"
 
 
 connection_string = config()
